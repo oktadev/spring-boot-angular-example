@@ -433,7 +433,7 @@ The result should look something like the following list of beer names with imag
 You’ve just created an Angular app that talks to a Spring Boot API using cross-domain requests. Congratulations! 
 
 ## Source Code
-You can find the source code associated with this article [on GitHub](https://github.com/okta/spring-boot-angular-example). If you find any bugs, please file an issue on GitHub, or ask your question on Stack Overflow with the "okta" tag. Of course, you can always [ping me on Twitter](https://twitter.com/mraible) too.
+You can find the source code associated with this article [on GitHub](https://github.com/oktadeveloper/spring-boot-angular-example). If you find any bugs, please file an issue on GitHub, or ask your question on Stack Overflow with the "okta" tag. Of course, you can always [ping me on Twitter](https://twitter.com/mraible) too.
 
 ## What’s Next?
 
