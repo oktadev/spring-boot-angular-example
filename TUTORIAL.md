@@ -195,7 +195,7 @@ npm cache clean
 npm install -g @angular/cli@latest
 ```
 
-Run `ng --version` to confirm you’re using version 1.0.0 (or later). From a terminal window, cd into the root of the `spring-boot-angular-pwa` directory and run the following command.
+Run `ng --version` to confirm you’re using version 1.0.0 (or later). From a terminal window, cd into the root of the `spring-boot-angular` directory and run the following command.
 
 ```bash
 ng new client
