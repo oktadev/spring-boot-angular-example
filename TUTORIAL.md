@@ -1,3 +1,5 @@
+# Get Started with Angular and Spring Boot
+
 Spring Boot has greatly simplified how to develop applications with Spring. Its auto-configuration and many starters has fostered a Spring renaissance that makes developing Spring apps fun again! Angular is one of the most popular JavaScript MVC frameworks. One of the easiest ways to build Angular apps is using Angular CLI and TypeScript. In this tutorial, you’ll be using Angular to develop a client that talks to a Spring Boot API. 
 
 [ThoughtWorks Technology Radar](https://www.thoughtworks.com/radar) is a document that describes changes that ThoughtWorks thinks are currently interesting in software development. They've recently stated that [Spring Boot should be adopted](https://www.thoughtworks.com/radar/languages-and-frameworks/spring-boot) (Nov 2016) and that [Angular 2 should be assessed](https://www.thoughtworks.com/radar/languages-and-frameworks/angular-2) (Mar 2017). Angular 4 was [released on March 23, 2017](http://angularjs.blogspot.de/2017/03/angular-400-now-available.html) with many performance improvements, so it might move to trial in the next radar.
