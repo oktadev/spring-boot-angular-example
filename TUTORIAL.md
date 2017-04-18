@@ -23,7 +23,7 @@ http https://start.spring.io/starter.zip \
 dependencies==devtools,h2,data-jpa,data-rest,web -d
 </pre>
 
-Create a directory called `spring-boot-angular`, with a `server` directory inside it. Expand the contents of `demo.zip` into the `server` directory. 
+Create a directory called `spring-boot-angular-example`, with a `server` directory inside it. Expand the contents of `demo.zip` into the `server` directory. 
 
 Open the “server" project in your favorite IDE and run `DemoApplication` or start it from the command line using `./mvnw spring-boot:run`. 
 
@@ -108,12 +108,12 @@ public class BeerCommandLineRunner implements CommandLineRunner {
 
     @Override
     public void run(String... strings) throws Exception {
-        // top 5 beers from https://www.beeradvocate.com/lists/top/
-        Stream.of("Good Morning", "Kentucky Brunch Brand Stout", "ManBearPig", "King Julius", 
-                  "Very Hazy", "Budweiser", "Coors Light", "PBR").forEach(name ->
+        // Top beers from https://www.beeradvocate.com/lists/top/
+        Stream.of("Kentucky Brunch Brand Stout", "Good Morning", "Very Hazy", "King Julius", 
+                "Budweiser", "Coors Light", "PBR").forEach(name ->
                 repository.save(new Beer(name))
         );
-        System.out.println(repository.findAll());
+        repository.findAll().forEach(System.out::println);
     }
 }
 ```
@@ -190,8 +190,6 @@ It’s cool that you created an API to display a list of beers, but APIs aren’
 To create an Angular project, make sure you have [Node.js](https://nodejs.org/) and the latest [Angular CLI installed](https://github.com/angular/angular-cli#updating-angular-cli).
 
 ```bash
-npm uninstall -g angular-cli @angular/cli
-npm cache clean
 npm install -g @angular/cli@latest
 ```
 
@@ -265,7 +263,7 @@ Modify `beer.service.ts` to call the “good-beers" API service.
 
 ```typescript
 import { Injectable } from '@angular/core';
-import { Http, Response, RequestOptions } from '@angular/http';
+import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs';
 
 @Injectable()
@@ -284,7 +282,7 @@ Modify `beer-list.component.ts` to use the `BeerService` and store the results i
 
 ```typescript
 import { Component, OnInit } from '@angular/core';
-import { BeerService } from '../shared/index';
+import { BeerService } from '../shared';
 
 @Component({
   selector: 'app-beer-list',
@@ -324,13 +322,11 @@ Update `app.component.html` to have the `BeerListComponent` rendered when you’
 <app-beer-list></app-beer-list>
 ```
 
-Make sure both apps are started (with `mvn spring-boot:run` in the server directory, and `ng serve` in the client directory) and navigate to http://localhost:4200. You should see an error in your console that you means you have to configure cross-origin resource sharing (CORS) on the server.
+Make sure both apps are started (with `mvn spring-boot:run` in the server directory, and `ng serve` in the client directory) and navigate to <http://localhost:4200>. You should see an error in your console that you means you have to configure cross-origin resource sharing (CORS) on the server.
 
 <pre style="color: red">
-XMLHttpRequest cannot load http://localhost:8080/me. Response to preflight request doesn't 
-pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested 
-resource. Origin 'http://localhost:4200' is therefore not allowed access. The response had HTTP 
-status code 401.
+XMLHttpRequest cannot load http://localhost:8080/good-beers. No 'Access-Control-Allow-Origin' header 
+is present on the requested resource. Origin 'http://localhost:4200' is therefore not allowed access.
 </pre>
 
 To fix this issue, you’ll need to configure Spring Boot to allow cross-domain access from `http://localhost:4200`.
@@ -341,9 +337,7 @@ In the server project, open `BeerController.java` and add a `@CrossOrigin` annot
 
 ```java
 import org.springframework.web.bind.annotation.CrossOrigin;
-
 ...
-
     @GetMapping("/good-beers")
     @CrossOrigin(origins = "http://localhost:4200")
     public Collection<Map<String, String>> goodBeers() {
@@ -389,7 +383,7 @@ Then add it to `BeerListComponent` to set a `giphyUrl` on each `beer` object.
 
 ```typescript
 import { Component, OnInit } from '@angular/core';
-import { BeerService, GiphyService } from '../shared/index';
+import { BeerService, GiphyService } from '../shared';
 
 @Component({
   selector: 'app-beer-list',
@@ -433,7 +427,7 @@ The result should look something like the following list of beer names with imag
 You’ve just created an Angular app that talks to a Spring Boot API using cross-domain requests. Congratulations! 
 
 ## Source Code
-You can find the source code associated with this article [on GitHub](https://github.com/oktadeveloper/spring-boot-angular-example). If you find any bugs, please file an issue on GitHub, or ask your question on Stack Overflow with the "okta" tag. Of course, you can always [ping me on Twitter](https://twitter.com/mraible) too.
+You can find the source code associated with this article [on GitHub](https://github.com/oktadeveloper/spring-boot-angular-example). If you find any bugs, please file an issue on GitHub, or ask your question on Stack Overflow with an [okta tag](http://stackoverflow.com/questions/tagged/okta). Of course, you can always [ping me on Twitter](https://twitter.com/mraible) too.
 
 ## What’s Next?
 
@@ -441,7 +435,7 @@ In a future article, I’ll show you how to create a progressive web application
 
 To learn more about Angular, Spring Boot, or Okta, check out the following resources:
 
-* [Angular with OpenID Connect](TBD)
+* [Angular with OpenID Connect](http://developer.okta.com/blog/2017/04/17/angular-authentication-with-oidc)
 * [Build an Angular App with Okta's Sign-In Widget in 15 Minutes](http://developer.okta.com/blog/2017/03/27/angular-okta-sign-in-widget)
 * [Get Started with Spring Boot, OAuth 2.0, and Okta](http://developer.okta.com/blog/2017/03/21/spring-boot-oauth)
 * [Get Started with Spring Boot, SAML, and Okta](http://developer.okta.com/blog/2017/03/16/spring-boot-saml)

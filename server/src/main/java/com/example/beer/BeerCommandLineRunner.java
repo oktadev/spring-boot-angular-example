@@ -15,11 +15,11 @@ class BeerCommandLineRunner implements CommandLineRunner {
 
     @Override
     public void run(String... strings) throws Exception {
-        // top 5 beers from https://www.beeradvocate.com/lists/top/
-        Stream.of("Good Morning", "Kentucky Brunch Brand Stout", "ManBearPig", "King Julius",
-                "Very Hazy", "Budweiser", "Coors Light", "PBR").forEach(name ->
+        // Top beers from https://www.beeradvocate.com/lists/top/
+        Stream.of("Kentucky Brunch Brand Stout", "Good Morning", "Very Hazy", "King Julius",
+                "Budweiser", "Coors Light", "PBR").forEach(name ->
                 repository.save(new Beer(name))
         );
-        System.out.println(repository.findAll());
+        repository.findAll().forEach(System.out::println);
     }
 }

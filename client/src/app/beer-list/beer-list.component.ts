@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BeerService, GiphyService } from '../shared/index';
+import { BeerService, GiphyService } from '../shared';
 
 @Component({
   selector: 'app-beer-list',
