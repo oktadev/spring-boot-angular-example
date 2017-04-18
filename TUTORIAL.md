@@ -4,17 +4,17 @@ Spring Boot has greatly simplified how to develop applications with Spring. Its 
 
 [ThoughtWorks Technology Radar](https://www.thoughtworks.com/radar) is a document that describes changes that ThoughtWorks thinks are currently interesting in software development. They've recently stated that [Spring Boot should be adopted](https://www.thoughtworks.com/radar/languages-and-frameworks/spring-boot) (Nov 2016) and that [Angular 2 should be assessed](https://www.thoughtworks.com/radar/languages-and-frameworks/angular-2) (Mar 2017). Angular 4 was [released on March 23, 2017](http://angularjs.blogspot.de/2017/03/angular-400-now-available.html) with many performance improvements, so it might move to trial in the next radar.
 
-This article will show you how to create REST endpoints with Spring Data REST, configure Spring Boot to allow CORS, and create an Angular app to display its data. This app will display a list of beers from the API, then fetch a GIF from <http://giphy.com> that matches the beer’s name. In a future article, I’ll show you how to turn this application into an PWA (Progressive Web Application) that works without a network connection.
+This article will show you how to create REST endpoints with Spring Data REST, configure Spring Boot to allow CORS, and create an Angular app to display its data. This app will display a list of beers from the API, then fetch a GIF from [https://giphy.com/](http://giphy.com) that matches the beer’s name. In a future article, I’ll show you how to turn this application into an PWA (Progressive Web Application) that works without a network connection.
 
 ## Build an API with Spring Boot
 
 To get started with Spring Boot, navigate to [start.spring.io](https://start.spring.io). In the “Search for dependencies" field, select the following: 
 
-* DevTools
-* H2
-* JPA
-* Rest Repositories
-* Web
+* [DevTools](http://docs.spring.io/spring-boot/docs/current/reference/html/using-boot-devtools.html): Provides auto-reloading of your application when files change
+* [H2](http://www.h2database.com/html/main.html): An in-memory database
+* [JPA](http://www.oracle.com/technetwork/java/javaee/tech/persistence-jsp-140049.html): Standard ORM for Java
+* [Rest Repositories](http://projects.spring.io/spring-data-rest/): Allows you to expose your JPA repositories as REST endpoints 
+* [Web](https://github.com/spring-projects/spring-boot/blob/master/spring-boot-starters/spring-boot-starter-web/pom.xml): Spring MVC with Jackson (for JSON), Hibernate Validator, and embedded Tomcat
 
 ![start.spring.io](static/start.spring.png "start.spring.io")
 
@@ -216,7 +216,7 @@ Executed 1 of 1 spec SUCCESS in 0.77 sec.
 [09:02:38] I/launcher - chrome #01 passed
 ```
 
-**TIP:** If you’re just getting started with Angular, you might want to [watch a video of my resent Getting Started with Angular webinar](https://www.youtube.com/watch?v=Jq3szz2KOOs).
+**TIP:** If you’re just getting started with Angular, you might want to [watch a video of my recent Getting Started with Angular webinar](https://www.youtube.com/watch?v=Jq3szz2KOOs).
 
 If you’d rather not use the command line and have [IntelliJ IDEA](https://www.jetbrains.com/idea/) (or [WebStorm](https://www.jetbrains.com/webstorm/)) installed, you can create a new Static Web Project and select Angular CLI.
 
