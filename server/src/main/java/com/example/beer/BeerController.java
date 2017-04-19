@@ -25,6 +25,7 @@ public class BeerController {
                 .filter(this::isGreat)
                 .map(b -> {
                     Map<String, String> m = new HashMap<>();
+                    m.put("id", b.getId().toString());
                     m.put("name", b.getName());
                     return m;
                 }).collect(Collectors.toList());
