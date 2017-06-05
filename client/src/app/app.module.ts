@@ -7,8 +7,6 @@ import { AppComponent } from './app.component';
 import { BeerListComponent } from './beer-list/beer-list.component';
 import { BeerService } from './shared/beer/beer.service';
 import { GiphyService } from './shared/giphy/giphy.service';
-import { MaterialModule } from '@angular/material';
-import { AppShellModule } from '@angular/app-shell';
 
 @NgModule({
   declarations: [
@@ -18,9 +16,7 @@ import { AppShellModule } from '@angular/app-shell';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule,
-    MaterialModule,
-    AppShellModule.runtime()
+    HttpModule
   ],
   providers: [BeerService, GiphyService],
   bootstrap: [AppComponent]
