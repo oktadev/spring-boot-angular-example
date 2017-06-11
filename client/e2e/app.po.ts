@@ -6,7 +6,11 @@ export class ClientPage {
   }
 
   getParagraphText() {
-    return element(by.css('app-root md-toolbar')).getText();
+    return element(by.css('app-root h1')).getText();
+  }
+
+  getBeerListTitle() {
+    return element(by.css('app-root h2')).getText();
   }
 }
 

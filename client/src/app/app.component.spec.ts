@@ -1,13 +1,28 @@
 import { TestBed, async } from '@angular/core/testing';
 
 import { AppComponent } from './app.component';
+import { BeerListComponent } from './beer-list/beer-list.component';
+import { BaseRequestOptions, ConnectionBackend, Http } from '@angular/http';
+import { MockBackend } from '@angular/http/testing';
+import { BeerService, GiphyService } from './shared';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
+        BeerListComponent
       ],
+      providers: [BeerService, GiphyService,
+        {
+          provide: Http, useFactory: (backend: ConnectionBackend, defaultOptions: BaseRequestOptions) => {
+          return new Http(backend, defaultOptions);
+        },
+          deps: [MockBackend, BaseRequestOptions]
+        },
+        {provide: MockBackend, useClass: MockBackend},
+        {provide: BaseRequestOptions, useClass: BaseRequestOptions}
+      ]
     }).compileComponents();
   }));
 
