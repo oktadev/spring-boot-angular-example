@@ -1,4 +1,4 @@
-package com.example.beer;
+package com.example.demo.beer;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -6,7 +6,8 @@ import org.springframework.stereotype.Component;
 import java.util.stream.Stream;
 
 @Component
-class BeerCommandLineRunner implements CommandLineRunner {
+public class BeerCommandLineRunner implements CommandLineRunner {
+
     private final BeerRepository repository;
 
     public BeerCommandLineRunner(BeerRepository repository) {

@@ -1,12 +1,11 @@
-import { browser, element, by } from 'protractor';
+import { browser, by, element } from 'protractor';
 
-export class ClientPage {
+export class AppPage {
   navigateTo() {
     return browser.get('/');
   }
 
   getParagraphText() {
-    return element(by.css('app-root md-toolbar')).getText();
+    return element(by.css('app-root h1')).getText();
   }
 }
-
