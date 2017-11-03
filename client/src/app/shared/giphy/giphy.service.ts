@@ -12,7 +12,7 @@ export class GiphyService {
   constructor(public http: HttpClient) {
   }
 
-  get(searchTerm){
+  get(searchTerm) {
     const apiLink = this.giphyApi + searchTerm;
     return this.http.get(apiLink).map((response: any) => {
       if (response.data.length > 0) {
