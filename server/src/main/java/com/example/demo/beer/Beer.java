@@ -12,7 +12,8 @@ public class Beer {
     private Long id;
     private String name;
 
-    public Beer() {}
+    public Beer() {
+    }
 
     public Beer(String name) {
         this.name = name;
