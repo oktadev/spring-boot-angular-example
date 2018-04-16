@@ -19,7 +19,7 @@ Please read [Bootiful Development with Spring Boot and Angular](https://develope
 To install this example application, run the following commands:
 
 ```bash
-git clone git@github.com:oktadeveloper/spring-boot-angular-example.git
+git clone https://github.com/oktadeveloper/spring-boot-angular-example.git
 cd spring-boot-angular-example
 ```
 
