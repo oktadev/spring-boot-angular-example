@@ -1,0 +1,97 @@
+== Bootiful Angular Demo Steps
+
+The brackets at the end of each step indicate the alias's or IntelliJ Live Templates to use. You can find the template definitions at https://github.com/mraible/idea-live-templates[mraible/idea-live-templates].
+
+=== Spring Boot API
+
+. start.spring.io: h2, lombok, jpa, rest, and web [`bootiful-start`]
+
+  http https://start.spring.io/starter.zip dependencies==h2,lombok,data-jpa,data-rest,web \
+    packageName==com.okta.developer.demo -d
+
+. Add `Beer`, `BeerRepository`, `BeerCommandLineRunner` and add default beers [`boot-entity-lombok`, `boot-repo`, `boot-command`, `boot-add`]
+
+. Start and see list of beers in console
+
+. Create `BeerController` with a `/good-beers` endpoint [`boot-controller`, `boot-good`]
+
+. Restart and confirm http://localhost:8080/good-beers works in browser and with http
+
+  http POST :8080/beers name='Guinness'
+  http PUT :8080/beers/1 name='Guinness is good for you'
+  http DELETE :8080/beers/1
+
+=== Angular App
+
+. Run `ng new client`; show app with `npm start`
+
+. Install Angular Material [`ng-material`]
+
+  npm i @angular/material @angular/cdk @angular/animations
+
+. Generate a beer service to talk to the API [`a-httpclient-get`]
+
+  ng g s shared/beer/beer
+
+. Add `HttpClientModule` as an import in `app.module.ts`
+
+. Generate a `BeerListComponent` and modify it to use `BeerService`
+
+  ng g c beer-list
+
+. Update `beer-list.component.html` to show the list of beers [`a-ngFor`]
+
+. Update `app.component.html` to use the `<app-beer-list>` component
+
+. Start the app, show error, modify `/good-beers` and repository to use `@CrossOrigin`
+
+=== Angular Material + Giphy
+
+. Add Angular Material imports and modify HTML [`mat-imports`, `mat-toolbar`, `mat-card`]
+. Modify `styles.css` to specify theme and icons [`mat-style`]
+. Add images with Giphy [`ng-giphy-service`, `ng-giphy-foreach`]
+
+=== PWA Support
+
+. Run `ng add @angular/pwa` to add PWA support
+
+. Run `ng build --prod`; serve with `serve -s dist/client -p 4200`
+
+. Run Lighthouse, show how app works offline
+
+. Mention Cloud Foundry and Heroku scripts
+
+=== Authentication with Okta
+
+. Add Okta Spring Boot Starter and oauth2-autoconfigure [`okta-maven-boot` and `spring-oauth2`]
+
+. Create OIDC app in Okta; add properties to `application.properties` [`okta-oauth2`]
+
+. Add `@EnableResourceServer` and show error at `http://localhost:8080`
+
+. Add Okta's Angular SDK [`okta-angular`]
+
+  npm i @okta/okta-angular
+
+. Update `app.module.ts` to have Okta config and use `OktaAuthModule` component [`okta-config`, `ng-oauth`]
+
+. Update `app-routing.module.ts` to have a new route for the redirect URI callback [`ng-callback`]
+
+. Create an `AuthInterceptor` in `okta/auth.interceptor.ts` and register it [`ng-interceptor`, `ng-provider`]
+
+. Modify `app.component.html` to have login and logout buttons + adjust CSS [`mat-login`, `toolbar-spacer`]
+
+. Change `app.component.ts` to be security aware [`ng-auth`]
+
+. Show app and issue with car list component
+
+. Create `HomeComponent` as a landing page and add routes [`mat-home`, `ng-auth`]
+
+. Watch demo fail because of CORS
+
+. Add a `corsFilter` to Spring Security and rejoice 🎉
+[`cors-filter`]
+
+. Fini!
+
+Source: https://developer.okta.com/blog/2017/04/26/bootiful-development-with-spring-boot-and-angular
