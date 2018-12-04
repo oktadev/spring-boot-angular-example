@@ -59,8 +59,6 @@ The brackets at the end of each step indicate the alias's or IntelliJ Live Templ
 
 . Run Lighthouse, show how app works offline
 
-. Mention Cloud Foundry and Heroku scripts
-
 === Authentication with Okta
 
 . Add Okta Spring Boot Starter and oauth2-autoconfigure [`okta-maven-boot` and `spring-oauth2`]
@@ -83,7 +81,7 @@ The brackets at the end of each step indicate the alias's or IntelliJ Live Templ
 
 . Change `app.component.ts` to be security aware [`ng-auth`]
 
-. Show app and issue with car list component
+. Show app and issue with beer list component
 
 . Create `HomeComponent` as a landing page and add routes [`mat-home`, `ng-auth`]
 
@@ -94,4 +92,7 @@ The brackets at the end of each step indicate the alias's or IntelliJ Live Templ
 
 . Fini!
 
-Source: https://developer.okta.com/blog/2017/04/26/bootiful-development-with-spring-boot-and-angular
+Sources:
+
+  - https://developer.okta.com/blog/2017/04/26/bootiful-development-with-spring-boot-and-angular[Bootiful Development with Spring Boot and Angular]
+  - https://developer.okta.com/blog/2018/08/22/basic-crud-angular-7-and-spring-boot-2[Build a Basic CRUD App with Angular 7.0 and Spring Boot 2.1]
