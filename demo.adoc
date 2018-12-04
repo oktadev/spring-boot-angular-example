@@ -83,14 +83,13 @@ The brackets at the end of each step indicate the alias's or IntelliJ Live Templ
 
 . Show app and issue with beer list component
 
-. Create `HomeComponent` as a landing page and add routes [`mat-home`, `ng-auth`]
-
 . Watch demo fail because of CORS
 
-. Add a `corsFilter` to Spring Security and rejoice 🎉
-[`cors-filter`]
+. Add a `corsFilter` to Spring Security [`cors-filter`]
 
-. Fini!
+. Create `HomeComponent` as a landing page and add routes [`mat-home`, `ng-auth`, `ng-route`]
+
+. Fini! 🎉
 
 Sources:
 
