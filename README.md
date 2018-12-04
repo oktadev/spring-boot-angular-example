@@ -2,9 +2,9 @@
  
 This example app shows how to create a Spring Boot API and display its data with an Angular UI.
 
-Please read [Bootiful Development with Spring Boot and Angular](https://developer.okta.com/blog/2017/04/26/bootiful-development-with-spring-boot-and-angular) to see how this app was created. You can also watch [this screencast on YouTube](https://www.youtube.com/watch?v=bUq83Rz4BHA).
+Please read [Bootiful Development with Spring Boot and Angular](https://developer.okta.com/blog/2017/04/26/bootiful-development-with-spring-boot-and-angular) to see how this app was created. You can also watch [this screencast on YouTube](https://www.youtube.com/watch?v=GhBwKT7EJsY).
 
-<a href="https://www.youtube.com/watch?v=bUq83Rz4BHA"><img src="https://i.ytimg.com/vi/bUq83Rz4BHA/maxresdefault.jpg" alt="Bootiful Development with Spring Boot and Angular" width="560"></a>
+<a href="https://www.youtube.com/watch?v=GhBwKT7EJsY"><img src="https://i.ytimg.com/vi/GhBwKT7EJsY/maxresdefault.jpg" alt="Bootiful Development with Spring Boot and Angular" width="560"></a>
 
 **Prerequisites:** [Java 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) and [Node.js](https://nodejs.org/).
 
